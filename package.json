@@ -1,0 +1,24 @@
+{
+  "name": "daily-news",
+  "version": "1.0.0",
+  "description": "",
+  "main": "vibe.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bekmuradov/daily-news-jamstack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bekmuradov/daily-news-jamstack/issues"
+  },
+  "homepage": "https://github.com/bekmuradov/daily-news-jamstack#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
+}

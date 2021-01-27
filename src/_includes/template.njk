@@ -20,15 +20,12 @@
             font-size: 4rem;
         }
     </style>
-    <title>News</title>
+    <title>{{ title }}</title>
 </head>
 <body>
-    <div class="container">
-        <h1>This is a page for you</h1>
-
-        <div class="love">
-            &#10084;
-        </div>
-    </div>
+    <header>
+        <a href="/">Home</a> | <a href="/about">About</a>
+    </header>
+    {{ content | safe }}
 </body>
 </html>
