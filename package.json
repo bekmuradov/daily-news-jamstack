@@ -20,5 +20,9 @@
   "homepage": "https://github.com/bekmuradov/daily-news-jamstack#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0"
   }
 }

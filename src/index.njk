@@ -10,5 +10,23 @@ layout: template.njk
         <div class="love">
             &#10084;
         </div>
+        <div class="row">
+        {% for article in news.articles %}
+        <div class="col s12 m6">
+      <div class="card small">
+        <div class="card-image">
+          <img src="{{ article.image }}">
+          <span class="card-title gray lighten-3">{{ article.source.name }} | <time datetime={{ article.publishedAt }}>{{ article.publishedAt }}</time></span>
+        </div>
+        <div class="card-content">
+          <p>{{ article.description }}</p>
+        </div>
+        <div class="card-action">
+          <a href="{{ article.url }}">{{ article.title }}</a>
+        </div>
+      </div>
+    </div>
+        {% endfor %}
+        </div>
     </div>
     <script src="../js/vibe.js"></script>
