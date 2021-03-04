@@ -1,0 +1,11 @@
+---
+permalink: _redirects
+---
+
+/  /fr/index.html 302 Language=fr
+
+{%- for obj in news %}
+/  /{{obj.country}}/index.html  302  Country={{obj.country}}
+{%- endfor %}
+
+/  /gb/index.html  404
