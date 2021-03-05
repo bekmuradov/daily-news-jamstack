@@ -9,28 +9,43 @@ permalink: /{{ news.country }}/index.html
 ---
 
     <div class="container">
-        <h1>This is a page for you</h1>
+        <h1>This is a simple Jamstack news & weather web app.</h1>
         <div class="vibe">you are great!</div>
-        <div class="love">
-            &#10084;
+        <div class="notification"></div>
+        <h2>Weather near you</h2>
+
+        <div class="row hidden" id="weather">
+          <div class="col s12">
+            <div class="card indigo accent-1 darken-1">
+              <div class="card-content white-text">
+                <span id="location"></span>
+                <p id="temp"></p>
+                <p id="pollution"></p>
+                <p id="humidity"></p>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="row">
         {% for article in news.articles %}
         <div class="col s12 m6">
-      <div class="card small">
-        <div class="card-image">
-          <img src="{{ article.image }}">
-          <span class="card-title gray lighten-3">{{ article.source.name }} | <time datetime={{ article.publishedAt }}>{{ article.publishedAt }}</time></span>
+          <div class="card small">
+            <div class="card-image">
+              <img src="{{ article.urlToImage }}">
+              <span class="card-title gray lighten-3">{{ article.source.name }} | <time datetime={{ article.publishedAt }}>{{ article.publishedAt }}</time></span>
+            </div>
+            <div class="card-content">
+              <p>{{ article.description }}</p>
+            </div>
+            <div class="card-action">
+              <a href="{{ article.url }}">{{ article.title }}</a>
+            </div>
+          </div>
         </div>
-        <div class="card-content">
-          <p>{{ article.description }}</p>
-        </div>
-        <div class="card-action">
-          <a href="{{ article.url }}">{{ article.title }}</a>
-        </div>
-      </div>
-    </div>
         {% endfor %}
         </div>
     </div>
-    <script src="../js/vibe.js"></script>
+    <script src="/js/geo.js"></script>
+    <script src="/js/vibe.js"></script>
+    
