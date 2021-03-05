@@ -5,14 +5,11 @@ function setPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   const url = `/.netlify/functions/weather_api?lat=${lat}&lon=${lon}`;
-  let requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
-  fetch(url, requestOptions)
-  .then(res => res.json())
-  .then(res => {
-    const data = res.data;
+  
+  fetch(url)
+  .then(response => response.json())
+  .then(result => {
+    const data = result.data;
     console.log(data)
     document.querySelector("#location").textContent = `${data.city}, ${data.country}`
     document.querySelector("#temp").innerHTML = `Temperature: ${data.current.weather.tp}\xB0<span>C</span>`;
