@@ -1,0 +1,14 @@
+---
+title: Oops! Not Found
+layout: error.njk
+pagination:
+    data: news
+    size: 1
+    alias: news
+permalink: /{{ news.country }}/404.html
+---
+  <div class="container">
+    <h1>Page Not Found</h1>
+    <p>Oops, we couldn't find this page!</p>
+    <p><a href="/{{ news.country }}/index.html">Back to the site?</a></p>
+  </div>
